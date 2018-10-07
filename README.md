@@ -48,3 +48,18 @@ it = interactive, -p = publish, 80:80 = your port:server port
 `docker compose up` run/install the app in a server 
 
 `docker compose down` stop the app
+
+## Dockers in GCP Compute Engine
+
+Make sure to install GIT and docker/compose
+
+`docker run docker/compose:1.13.0 version` or latest
+
+```
+docker run --rm \
+    -v /var/run/docker.sock:/var/run/docker.sock \
+    -v "$PWD:/rootfs/$PWD" \
+    -w="/rootfs/$PWD" \
+    docker/compose:1.13.0 up
+```
+
