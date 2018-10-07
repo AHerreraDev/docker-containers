@@ -17,8 +17,7 @@ it = interactive, -p = publish, 80:80 = your port:server port
 
 `docker container exec -it NAME bash` bash into your server
 
-## Bind files in nginx server into a local directory
-## This allows the user to edit files in the container
+## Bind files in nginx server into a local directory. This allows the user to edit files in the container
 
 `docker container run -d -p 8080:80 -v $(pwd):/usr/share/nginx/html --name nginx-website nginx`
 
