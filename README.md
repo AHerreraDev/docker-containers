@@ -4,7 +4,7 @@
 
 ## Quick Start
 
-```bash
+```
 # Run in Docker
 docker-compose up
 # use -d flag to run in background
@@ -17,4 +17,16 @@ volumes: ['./:/usr/src/app']
 
 # To re-build
 docker-compose build
+
+
+# Install Docker-Compose in Linux VM
+sudo curl -L https://github.com/docker/compose/releases/download/1.22.0/docker-compose-`uname -s`-`uname -m` -o /usr/local/bin/docker-compose
+
+sudo chmod +x /usr/local/bin/docker-compose
+
+docker-compose --version
+
+# Solve Docker daemon socket error:
+sudo usermod -a -G docker $USER
+Then, logout and log back in
 ```
